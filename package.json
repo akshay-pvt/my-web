@@ -1,0 +1,15 @@
+{
+  "name": "secure-html-server",
+  "version": "1.0.0",
+  "description": "Serve index.html securely using Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "author": "Eypz",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
