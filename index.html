@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay | Full-Stack Developer</title>
+    
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable keyboard shortcuts
+        document.onkeydown = function(e) {
+            // Disable F12
+            if (event.keyCode == 123) { return false; }
+            // Disable Ctrl+Shift+I (Inspect)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; }
+            // Disable Ctrl+Shift+C (Inspect Element)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; }
+            // Disable Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; }
+            // Disable Ctrl+U (View Source)
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; }
+            // Disable Ctrl+S (Save)
+            if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) { return false; }
+        }
+
+        // Detect DevTools opening
+        setInterval(function() {
+            var before = new Date().getTime();
+            debugger;
+            var after = new Date().getTime();
+            if (after - before > 100) {
+                document.querySelector('body').innerHTML = "<h1>Developer Tools are disabled on this site.</h1>";
+            }
+        }, 100);
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0a0c;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+            -webkit-user-select: none; /* Disable text selection */
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 glass py-4 px-8 flex justify-between items-center">
+        <div class="text-2xl font-extrabold tracking-tighter gradient-text">AKSHAY.DEV</div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+            <a href="#about" class="hover:text-indigo-400 transition">About</a>
+            <a href="#services" class="hover:text-indigo-400 transition">Services</a>
+            <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+        </div>
+        <a href="mailto:akshaydev497@gmail.com" class="bg-indigo-600 hover:bg-indigo-700 px-5 py-2 rounded-full text-sm font-bold transition">Hire Me</a>
+    </nav>
+
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative">
+        <div class="hero-glow" style="top: 20%; left: 20%;"></div>
+        <div class="hero-glow" style="bottom: 20%; right: 20%;"></div>
+
+        <h2 class="text-indigo-400 font-mono mb-4">Namaste! I'm</h2>
+        <h1 class="text-6xl md:text-8xl font-extrabold mb-6 tracking-tight">Akshay <span class="gradient-text">Eypz</span></h1>
+        <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
+            A passionate <span class="text-white font-semibold">Full-Stack Developer</span> from Kerala, India. 
+            I build the future with <span class="text-yellow-400">JavaScript</span>.
+        </p>
+        <div class="flex space-x-4">
+            <a href="#services" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:scale-105 transition transform">My Projects</a>
+            <a href="#contact" class="glass px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">Let's Connect</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-8 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="w-full h-96 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl rotate-3 absolute -z-10 opacity-20"></div>
+                <div class="w-full h-96 glass rounded-3xl flex items-center justify-center border border-white/10 overflow-hidden">
+                    <i class="fab fa-js-square text-9xl text-yellow-400"></i>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-4xl font-bold mb-6">Mastering <span class="text-indigo-500">JavaScript</span></h3>
+                <p class="text-slate-400 text-lg mb-6">
+                    I am Akshay (Eypz), a Full-Stack developer based in Kerala. I love JavaScript and use it to build everything from complex APIs and Discord bots to high-performance private servers and interactive websites.
+                </p>
+                <div class="grid grid-cols-2 gap-4 font-mono text-sm">
+                    <div class="flex items-center"><i class="fas fa-bolt text-indigo-500 mr-2"></i> Fast APIs</div>
+                    <div class="flex items-center"><i class="fas fa-robot text-indigo-500 mr-2"></i> Custom Bots</div>
+                    <div class="flex items-center"><i class="fas fa-server text-indigo-500 mr-2"></i> Private Servers</div>
+                    <div class="flex items-center"><i class="fas fa-layer-group text-indigo-500 mr-2"></i> Full-Stack</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-8 bg-black/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Expertise</h2>
+                <div class="w-20 h-1 bg-indigo-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
+                    <i class="fas fa-terminal text-4xl text-indigo-500 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-4">Bots & Scripts</h4>
+                    <p class="text-slate-400">Custom JavaScript automation for various platforms.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300 border-indigo-500/30 border">
+                    <i class="fas fa-database text-4xl text-purple-500 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-4">API Development</h4>
+                    <p class="text-slate-400">Fast, secure backend systems using Node.js.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
+                    <i class="fas fa-cloud text-4xl text-pink-500 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-4">Private Servers</h4>
+                    <p class="text-slate-400">Hosting and maintenance for private application environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-8 max-w-4xl mx-auto text-center">
+        <h2 class="text-5xl font-extrabold mb-12">Connect with <span class="gradient-text">Me</span></h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <a href="mailto:akshaydev497@gmail.com" class="glass p-6 rounded-2xl hover:bg-white/5 transition">
+                <i class="fas fa-envelope text-2xl mb-4 block text-indigo-400"></i>
+                <span class="text-sm font-medium">Email</span>
+                <p class="text-xs text-slate-400 mt-2">akshaydev497@gmail.com</p>
+            </a>
+            <a href="https://instagram.com/eypzffx" class="glass p-6 rounded-2xl hover:bg-white/5 transition">
+                <i class="fab fa-instagram text-2xl mb-4 block text-pink-500"></i>
+                <span class="text-sm font-medium">Instagram</span>
+                <p class="text-xs text-slate-400 mt-2">@eypzffx</p>
+            </a>
+            <div class="glass p-6 rounded-2xl hover:bg-white/5 transition">
+                <i class="fab fa-discord text-2xl mb-4 block text-blue-500"></i>
+                <span class="text-sm font-medium">Discord</span>
+                <p class="text-xs text-slate-400 mt-2">eypzffx</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-slate-500 font-medium">&copy; Akshay-Eypz 2026 | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
